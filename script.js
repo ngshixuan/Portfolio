@@ -348,8 +348,15 @@ Math.easeInOutQuad = function (t, b, c, d) {
 		this.contentWrapper = this.element.getElementsByClassName('h--timeline-events')[0];
 		this.content = this.contentWrapper.getElementsByClassName('h--timeline-event');
 
-		this.eventsMinDistance = 80; // min distance between two consecutive events (in px)
-		this.eventsMaxDistance = 300; // max distance between two consecutive events (in px)
+		 // min distance between two consecutive events (in px)
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			this.eventsMinDistance = 20;
+			this.eventsMaxDistance = 150; // max distance between two consecutive events (in px)
+		}else{
+			this.eventsMinDistance = 80;
+			this.eventsMaxDistance = 300;
+		}
+		
 		this.translate = 0; // this will be used to store the translate value of this.line
 		this.lineLength = 0; //total length of this.line
 
