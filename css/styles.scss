@@ -309,6 +309,7 @@ p{
     top: 100px;
     max-width: 308px;
     margin-bottom: 25px;
+    margin-left: 13px;
 }
 
 .subtitle > span{
@@ -343,21 +344,33 @@ li{
 }
 
 .skills-section{
-    margin-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 4rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+@media (min-width: 980px) and (max-width: 1300px){
+    .skills-section { grid-template-columns: repeat(6, 1fr); }
+
+}
+
+@media (min-width: 800px) and (max-width: 980px) {
+    .skills-section { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (min-width: 620px) and (max-width: 800px){
+    .skills-section { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 620px){
+    .skills-section { grid-template-columns: repeat(3, 1fr); }
 }
 
 .skills-section div{
-    display: block;
-    margin: 0 30px 3rem;
+text-align: center;
 }
 
 .skills-section div p{
-    text-align: center;
     font-weight: 700;
 }
 /* Horizontal Timeline */
